@@ -1,0 +1,11 @@
+{
+  "name": "electronic-stories",
+  "version": "0.0.1",
+  "description": "Run your react-stories in electron in Electron environment",
+  "repository": {
+    "type": "git",
+    "url": "git@gh:web-pal/electronic-stories.git"
+  },
+  "author": "Dmytro Shaforostov",
+  "license": "MIT"
+}
