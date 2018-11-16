@@ -1,0 +1,14 @@
+[ignore]
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+esproposal.export_star_as=enable
+module.name_mapper='^shared' ->'<PROJECT_ROOT>/app/shared'
+module.name_mapper='^renderer-actions' ->'<PROJECT_ROOT>/app/renderer/actions'
+
+[strict]
