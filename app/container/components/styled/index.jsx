@@ -43,6 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     flex: 0 0 200px;
     background: #f7f7f7;
     height: 100vh;
+    overflow-y: scroll;
   }
   #stories-render {
     flex: 1 0;
