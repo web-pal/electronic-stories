@@ -101,8 +101,8 @@ const TaleName = styled.a`
 `;
 
 const renderInto = rootEl => R.pipe(
-  x => el => reactRender(x, el),
-  render1 => render1(rootEl),
+  (x, callback) => el => reactRender(x, el, callback),
+  render => render(rootEl),
 );
 
 let webviewRef;
@@ -116,7 +116,17 @@ R.pipe(
       preload={`file://${path.join(process.cwd(), 'app/containerDist/preload.js')}`}
       ref={(el) => { webviewRef = el; }}
     />
-  )),
+  ), () => {
+    if (webviewRef) {
+      webviewRef.addEventListener('dom-ready', () => {
+        ipcRenderer.on('electron-actions', (_, a) => {
+          if (a.type === 'TOGGLE_WEBVIEW_DEVTOOLS') {
+            webviewRef.getWebContents().toggleDevTools();
+          }
+        });
+      });
+    }
+  }),
 )();
 
 R.pipe(

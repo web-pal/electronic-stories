@@ -7,6 +7,7 @@ import {
 export default class MenuBuilder {
   constructor(mainWindow) {
     this.mainWindow = mainWindow;
+    console.log('mainWindow', mainWindow);
   }
 
   buildMenu() {
@@ -112,6 +113,18 @@ export default class MenuBuilder {
             this.mainWindow.toggleDevTools();
           },
         },
+        {
+          label: 'Toggle stories devtools',
+          accelerator: 'Alt+Command+L',
+          click: () => {
+            this.mainWindow.send(
+              'electron-actions',
+              {
+                type: 'TOGGLE_WEBVIEW_DEVTOOLS',
+              },
+            );
+          },
+        },
       ],
     };
     const subMenuViewProd = {
@@ -180,23 +193,23 @@ export default class MenuBuilder {
     const templateDefault = [
       {
         label: '&View',
-        submenu:
-          process.env.NODE_ENV === 'development'
-            ? [
+        submenu: [
+          {
+            label: 'Toggle &Full Screen',
+            accelerator: 'F11',
+            click: () => {
+              this.mainWindow.setFullScreen(
+                !this.mainWindow.isFullScreen(),
+              );
+            },
+          },
+          ...(process.env.NODE_ENV === 'development'
+            ? [[
               {
                 label: '&Reload',
                 accelerator: 'Ctrl+R',
                 click: () => {
                   this.mainWindow.webContents.reload();
-                },
-              },
-              {
-                label: 'Toggle &Full Screen',
-                accelerator: 'F11',
-                click: () => {
-                  this.mainWindow.setFullScreen(
-                    !this.mainWindow.isFullScreen(),
-                  );
                 },
               },
               {
@@ -206,18 +219,22 @@ export default class MenuBuilder {
                   this.mainWindow.toggleDevTools();
                 },
               },
-            ]
-            : [
-              {
-                label: 'Toggle &Full Screen',
-                accelerator: 'F11',
-                click: () => {
-                  this.mainWindow.setFullScreen(
-                    !this.mainWindow.isFullScreen(),
-                  );
+            ]]
+            : []
+          ),
+          {
+            label: 'Toggle stories devtools',
+            accelerator: 'Alt+Command+L',
+            click: () => {
+              this.mainWindow.send(
+                'electron-actions',
+                {
+                  type: 'TOGGLE_WEBVIEW_DEVTOOLS',
                 },
-              },
-            ],
+              );
+            },
+          },
+        ],
       },
       {
         label: 'Help',

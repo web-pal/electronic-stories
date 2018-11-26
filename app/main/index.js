@@ -19,10 +19,7 @@ import initialize from './initialize';
 
 const electronDebug = require('electron-debug');
 
-electronDebug({
-  enabled: true,
-  showDevTools: false,
-});
+electronDebug();
 
 const path = require('path');
 

@@ -12,7 +12,7 @@ export default function () {
       : `file://${__dirname}/index.html`
   );
   const win = new BrowserWindow({
-    show: false,
+    show: true,
     width: 1024,
     height: 728,
   });
