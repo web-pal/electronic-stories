@@ -15,8 +15,8 @@ module.exports = env => ({
     extensions: ['.js', '.jsx', '.mjs', '.wasm', '.json'],
   },
   output: {
-    path: path.resolve(__dirname, 'app/containerDist'),
-    publicPath: '/',
+    path: path.resolve(__dirname, 'app/dist'),
+    publicPath: path.resolve(__dirname, 'app/dist'),
     filename: '[name].prod.js',
   },
   plugins: [
@@ -127,7 +127,7 @@ module.exports = env => ({
           loader: 'file-loader',
           options: {
             limit: 10000,
-            name: 'fonts/[name].[ext]',
+            name: '/fonts/[name].[ext]',
           },
         },
       },

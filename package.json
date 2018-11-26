@@ -10,7 +10,8 @@
     "build-main": "webpack --env.NODE_ENV=production --env.DEBUG_PROD=true --config webpack.main.prod.js --colors --progress --profile",
     "build-renderer": "webpack --env.NODE_ENV=production --config webpack.prod.js --colors --progress --profile",
     "dev": "webpack-dev-server --port 9001 --env.NODE_ENV=development --config webpack.dev.js --colors",
-    "start-main-dev": "electron -r '@babel/register' app/main"
+    "start-main-dev": "electron -r '@babel/register' app/main",
+    "start": "electron app/dist/main.prod.js"
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
