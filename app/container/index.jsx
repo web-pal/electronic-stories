@@ -32,7 +32,10 @@ R.pipe(
       <webview
         src="http://localhost:9002/"
         nodeintegration="true"
-        preload={`file://${path.join(process.cwd(), 'app/containerDist/preload.js')}`}
+        preload={`file://${
+          (process.env.NODE_ENV === 'development'
+            ? path.join(process.cwd(), 'app/containerDist/preload.js')
+            : path.resolve(__dirname, 'preload.prod.js'))}`}
         ref={(el) => { webviewRef = el; }}
       />
     ),
