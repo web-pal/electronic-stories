@@ -7,7 +7,6 @@ import {
 export default class MenuBuilder {
   constructor(mainWindow) {
     this.mainWindow = mainWindow;
-    console.log('mainWindow', mainWindow);
   }
 
   buildMenu() {
@@ -135,6 +134,18 @@ export default class MenuBuilder {
           accelerator: 'Ctrl+Command+F',
           click: () => {
             this.mainWindow.setFullScreen(!this.mainWindow.isFullScreen());
+          },
+        },
+        {
+          label: 'Toggle stories devtools',
+          accelerator: 'Alt+Command+L',
+          click: () => {
+            this.mainWindow.send(
+              'electron-actions',
+              {
+                type: 'TOGGLE_WEBVIEW_DEVTOOLS',
+              },
+            );
           },
         },
       ],

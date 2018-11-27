@@ -9,7 +9,7 @@ module.exports = () => ({
   entry: path.join(__dirname, 'app/main/index.js'),
 
   output: {
-    path: path.resolve(__dirname, 'app/dist'),
+    path: path.resolve(__dirname, 'lib'),
     filename: 'main.prod.js',
   },
   resolve: {
@@ -17,7 +17,7 @@ module.exports = () => ({
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      DEBUG_PROD: true,
+      DEBUG_PROD: false,
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',

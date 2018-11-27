@@ -17,6 +17,9 @@ export default function () {
     width: 1024,
     height: 728,
     icon: path.join(__dirname, '../assets/icons/png/64x64.png'),
+    webPreferences: {
+      devTools: process.env.NODE_ENV === 'development',
+    },
   });
   win.loadURL(url);
 

@@ -34,8 +34,9 @@ app/node_modules
 .idea
 npm-debug.log.*
 
-main.prod.js
 main.prod.js.map
+preload.prod.js.map
+app.prod.js.map
 release/
 dist/
 app/containerDist/

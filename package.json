@@ -11,7 +11,10 @@
     "build-renderer": "webpack --env.NODE_ENV=production --config webpack.prod.js --colors --progress --profile",
     "dev": "webpack-dev-server --port 9001 --env.NODE_ENV=development --config webpack.dev.js --colors",
     "start-main-dev": "electron -r '@babel/register' app/main",
-    "start": "electron app/dist/main.prod.js"
+    "start": "electron lib/main.prod.js"
+  },
+  "bin": {
+    "electronic-stories": "./cli.js"
   },
   "dependencies": {
     "@babel/polyfill": "7.0.0",
@@ -20,7 +23,8 @@
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-hot-loader": "4.3.6",
-    "styled-components": "^4.1.1"
+    "styled-components": "^4.1.1",
+    "electron": "3.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
@@ -40,7 +44,6 @@
     "babel-plugin-styled-components": "1.7.1",
     "concurrently": "4.0.1",
     "css-loader": "1.0.0",
-    "electron": "3.0.2",
     "electron-builder": "^20.28.4",
     "electron-debug": "2.0.0",
     "electron-devtools-installer": "2.2.4",

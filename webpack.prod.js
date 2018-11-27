@@ -15,8 +15,8 @@ module.exports = env => ({
     extensions: ['.js', '.jsx', '.mjs', '.wasm', '.json'],
   },
   output: {
-    path: path.resolve(__dirname, 'app/dist'),
-    publicPath: path.resolve(__dirname, 'app/dist'),
+    path: path.resolve(__dirname, 'lib'),
+    publicPath: './',
     filename: '[name].prod.js',
   },
   plugins: [
