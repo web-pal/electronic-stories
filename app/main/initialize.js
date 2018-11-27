@@ -1,4 +1,5 @@
 /* global process */
+import path from 'path';
 import {
   BrowserWindow,
 } from 'electron';
@@ -15,6 +16,7 @@ export default function () {
     show: true,
     width: 1024,
     height: 728,
+    icon: path.join(__dirname, '../assets/icons/png/64x64.png'),
   });
   win.loadURL(url);
 

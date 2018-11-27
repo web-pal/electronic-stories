@@ -58,3 +58,6 @@ app.on('activate', () => {
     .getAllWindows()
     .forEach(win => win.show());
 });
+
+app.dock.setIcon(path.join(__dirname, '../assets/icons/png/512x512.png'));
+app.setName('Electronic-Stories');
