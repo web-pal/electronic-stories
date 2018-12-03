@@ -16,6 +16,7 @@ import {
   BrowserWindow,
 } from 'electron';
 import initialize from './initialize';
+import icon from '../assets/icons/png/512x512.png';
 
 const electronDebug = require('electron-debug');
 
@@ -59,5 +60,8 @@ app.on('activate', () => {
     .forEach(win => win.show());
 });
 
-app.dock.setIcon(path.join(__dirname, '../assets/icons/png/512x512.png'));
+
+app.dock.setIcon(process.env.NODE_ENV === 'development'
+  ? icon
+  : path.resolve(__dirname, 'images/512x512.png'));
 app.setName('Electronic-Stories');

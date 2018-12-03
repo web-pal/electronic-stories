@@ -63,6 +63,17 @@ module.exports = () => ({
           },
         },
       },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|eot|webp)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
 
