@@ -4,6 +4,8 @@
 Electronic-Stories is a tool for developing UI components in Electron environment.
 It allows you to browse a component library, view the different states of each component, and interactively develop and test components.
 
+![Chronos-timetracker Screenshot](https://web-pal.com/assets/images/electronic-stories-cover.png)
+
 ## Getting Started
 
 First install Electronic-Stories:
