@@ -1,6 +1,6 @@
 {
   "name": "electronic-stories",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Run your react-stories in electron in Electron environment",
   "repository": {
     "type": "git",

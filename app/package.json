@@ -2,7 +2,7 @@
   "name": "electronic-stories-inner",
   "description": "Run your react-stories in electron in Electron environment",
   "main": "./dist/main.prod.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Dmytro Shaforostov",
   "license": "MIT",
   "repository": {
